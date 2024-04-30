@@ -1619,7 +1619,7 @@ int	main(void)
     test_ft_memcmp();
     printf("20 - ft_strnstr not tested here\n");
 	test_ft_atoi();
-    printf("22 - ft_calloc not tested here\n");
+    printf("22 - ft_calloc not tested here, but check the overflow scenario just in case\n");
     test_ft_strdup();
     test_ft_substr();
     test_ft_strjoin();
