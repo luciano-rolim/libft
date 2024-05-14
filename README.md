@@ -6,3 +6,5 @@
 - To run this custom test, just compile all .c files at once (including lib_test.c) and run ./a.out
 
 - Pro-tip: since this project has a lot of .c files, compile using *.c wildcard. For example: `gcc -Wall -Wextra -Werror *.c` will compile all .c files at once.
+
+- In this project, I also used [libftTester](url) to test it too.
