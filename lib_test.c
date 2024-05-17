@@ -109,6 +109,12 @@ void test_ft_strmapi(void) {
     char *result;
     int all_tests_passed = 1;
 
+    result = ft_strmapi(NULL, uppercase);
+    if (result != NULL) {
+        printf("KO - ft_strmapi - NULL input handling failed. Expected NULL, got '%s'\n", result);
+        all_tests_passed = 0;
+    }
+
     // Using uppercase transformation
     result = ft_strmapi(str, uppercase);
     if (strcmp(result, "HELLO WORLD!") != 0) {
@@ -1595,6 +1601,24 @@ void test_ft_isalpha(void)
         printf("1 - ft_isalpha is OK\n");
 }
 
+void example_func(unsigned int index, char *ch) 
+{
+    // Example action: increment each character
+    if (ch != NULL) {
+        *ch = *ch + 1;
+    }
+}
+
+void test_ft_striteri(void) 
+{
+    int all_tests_passed = 1;
+
+    ft_striteri(NULL, example_func);
+
+    if (all_tests_passed)
+        printf("30 - ft_striteri is OK\n");
+
+}
 
 int	main(void)
 {
@@ -1627,10 +1651,10 @@ int	main(void)
     test_ft_split();
     test_ft_itoa();
     test_ft_strmapi();
-    printf("30 - striteri not tested here\n");
+    test_ft_striteri();
     test_ft_putchar_fd();
     test_ft_putstr_fd();
-    printf("33 - ft_putendl_fd not tested here\n");
+    printf("33 - ft_putendl_fd not tested here\n");    
     printf("34 - ft_putnbr_fd not tested here\n");
 	return (0);
 }
